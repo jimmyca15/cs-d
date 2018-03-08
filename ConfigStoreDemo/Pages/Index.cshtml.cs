@@ -12,6 +12,8 @@
             ViewData["RefreshRate"] = _settings.RefreshRate;
             ViewData["Language"] = _settings.Language;
             ViewData["Messages"] = _settings.Messages;
+            ViewData["FontSize"] = _settings.FontSize;
+            ViewData["BackgroundColor"] = _settings.BackgroundColor;
         }
     }
 }

@@ -14,6 +14,9 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
     </environment>
     <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+    @RenderSection("InlineStyles", required: false)
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">

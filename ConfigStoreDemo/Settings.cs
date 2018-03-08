@@ -11,6 +11,8 @@
             string refreshRate = Environment.GetEnvironmentVariable("REFRESH_RATE");
             string language = Environment.GetEnvironmentVariable("LANGUAGE");
             string messages = Environment.GetEnvironmentVariable("MESSAGES");
+            string backgroundColor = Environment.GetEnvironmentVariable("BACKGROUND_COLOR");
+            string fontSize = Environment.GetEnvironmentVariable("FONT_SIZE");
 
             if (!string.IsNullOrEmpty(version) && double.TryParse(version, out double numVersion))
             {
@@ -37,6 +39,16 @@
                 this.Messages = messages;
             }
 
+            if (!string.IsNullOrEmpty(backgroundColor))
+            {
+                this.BackgroundColor = backgroundColor;
+            }
+
+            if (!string.IsNullOrEmpty(fontSize) && long.TryParse(fontSize, out long numFontSize))
+            {
+                this.FontSize = numFontSize;
+            }
+
             if (this.Version >= 2.0)
             {
                 //
@@ -54,5 +66,9 @@
         public string Language { get; set; } = "English";
 
         public string Messages { get; set; } = "Hello There;Thanks For Using ConfigStoreDemo";
+
+        public string BackgroundColor { get; set; } = "rgb(255, 165, 0)";
+
+        public long FontSize { get; set; } = 50;
     }
 }
